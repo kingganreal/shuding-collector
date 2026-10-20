@@ -1,0 +1,26 @@
+[project]
+name = "shuding-collector"
+version = "0.1.0"
+description = "슈딩이 컬렉터 - 고양이 사진 한국어 검색 + 검색어 강화 학습"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "torch>=2.8",
+    "torchvision>=0.23",
+    "transformers>=5.0",
+    "sentence-transformers>=5.1",
+    "accelerate>=1.10",
+    "bitsandbytes>=0.47",
+    "pillow>=11",
+    "pillow-heif>=1.0",
+    "numpy>=2",
+    "tqdm",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
